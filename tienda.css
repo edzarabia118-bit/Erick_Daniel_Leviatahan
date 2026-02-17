@@ -5,7 +5,19 @@
     gap:30px;
     padding:40px;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
 
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+    color: white;
+    overflow-x: hidden;
+}
 .producto{
     width:250px;
     background:rgba(255,255,255,0.08);
@@ -84,4 +96,5 @@
     border-radius:15px;
     width:90%;
     max-width:400px;
+
 }
