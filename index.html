@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Daniel Zarabia | Portafolio Vivo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="adeencaw.css">
+    <link rel="stylesheet" href="tienda.css">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("UPz0RG743lWbGT_cT");
+        })();
+    </script>
+</head>
+<body>
+
+<div class="fondo-animado"></div>
+
+<header class="hero">
+    <img src="img/yo.jpg" alt="Foto de Daniel">
+    <h1>Daniel Zarabia</h1>
+    <p>Programación • Redes • Tecnología</p>
+</header>
+
+<nav>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#contacto">Contacto</a>
+    <a href="tienda.html">Tienda</a>
+</nav>
+
+<section class="galeria">
+    <div class="card">
+        <img src="img/proyecto3.jpg">
+        <div class="info">
+            <h2>Programación</h2>
+            <p>C++, Visual Basic, lógica y POO</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="img/proyecto2.jpg">
+        <div class="info">
+            <h2>Bases de Datos</h2>
+            <p>XAMPP, MySQL, consola</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="img/proyecto1.jpg">
+        <div class="info">
+            <h2>Redes</h2>
+            <p>Configuración Cisco y conceptos</p>
+        </div>
+    </div>
+</section>
+
+<section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <p>
+       Profesional en formación en el área de Tecnologías de la Información,
+        con conocimientos en programación estructurada y orientada a objetos
+         (C++, Visual Basic), bases de datos (MySQL, XAMPP) y fundamentos de
+          redes (configuración y conceptos Cisco).
+
+        Experiencia desarrollando proyectos académicos y personales enfocados
+         en soluciones funcionales, integración de bases de datos y diseño de
+          interfaces web.
+
+        Destaco por mi capacidad de análisis lógico, aprendizaje autónomo y 
+        enfoque orientado a resultados. Busco integrarme a un entorno 
+        profesional donde pueda aportar conocimientos técnicos y continuar 
+        fortaleciendo mis competencias en el área de sistemas.
+    </p>
+</section>
+
+<section id="habilidades">
+    <h2>Habilidades</h2>
+    <ul>
+        <li>C++ (Eclipse, NetBeans, Visual Stude Code)</li>
+        <li>Visual Basic</li>
+        <li>Bases de datos con MySQL</li>
+        <li>Excel (nivel alto)</li>
+        <li>App Inventor</li>
+        <li>Redes (Cisco)</li>
+    </ul>
+</section>
+
+<section id="contacto">
+<h2>Contáctame</h2> 
+<p>Buscame en redes sociales:</p> 
+<div class="contacto-links"> 
+    <a href="https://facebook.com/erick_daniel_zarabia" target="_blank">📘 Facebook</a>
+     <a href="https://instagram.com/lykaiosmoses000.y" target="_blank">📸 Instagram</a>
+      <a href="https://twitter.com/leviatan_daniel" target="_blank">🐦 Twitter / X</a>
+       <a href="https://youtube.com/@leviatandanielzarabia6052 " target="_blank">▶️ YouTube</a>
+        <a href="https://www.threads.net/@lykaiosmoses000.y" target="_blank">🧵 Threads</a>
+         <p>Email: <strong>ed.zarabia118@gmail.com</strong></p>
+          <p>Ubicación: Coacalco, Estado de México</p> </div>
+<div class="telefono"> 📞 Teléfono / WhatsApp: <strong>+52 55 6324 5722</strong> </div> </div>
+</section>
+<footer>
+    <p>© 2026 Daniel Zarabia — Portafolio Experimental</p>
+</footer>
+
+<!-- BOTÓN FLOTANTE -->
+<button id="btnContacto">Contáctame</button>
+
+<!-- MODAL -->
+<div id="modalContacto">
+    <div class="modalContenido">
+        <span id="cerrarModal">&times;</span>
+        <h2>Contáctame</h2>
+        <p>¿Te interesa trabajar conmigo? Escríbeme.</p>
+
+        <form id="formContacto">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="correo" placeholder="Tu correo" required>
+            <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
