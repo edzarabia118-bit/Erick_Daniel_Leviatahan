@@ -1,0 +1,421 @@
+body{
+font-family: Arial;
+background:#f4f1ea;
+margin:0;
+}
+
+.container{
+width:90%;
+margin:auto;
+padding:30px;
+}
+
+h1{
+color:#4b2e2e;
+}
+
+form{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-bottom:30px;
+}
+
+form input,
+form select{
+padding:10px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+background:#6f4e37;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:6px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#4b2e2e;
+}
+
+/* TABLA */
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+th{
+background:#6f4e37;
+color:white;
+padding:12px;
+}
+
+td{
+padding:10px;
+text-align:center;
+border-bottom:1px solid #eee;
+}
+
+tr:hover{
+background:#f9f6f1;
+}
+
+/* STOCK BAJO */
+
+.bajo{
+background:#ffd6d6 !important;
+color:#8b0000;
+font-weight:bold;
+}
+.fade{
+opacity:0;
+transform:translateY(20px);
+transition:.6s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* botones */
+
+td button{
+border:none;
+padding:6px 10px;
+margin:2px;
+border-radius:6px;
+cursor:pointer;
+background:#6f4e37;
+color:white;
+transition:.3s;
+}
+
+td button:hover{
+transform:scale(1.1);
+background:#4b2e2e;
+}
+.fade{
+    animation: aparecer .6s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.mensaje{
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:8px;
+}
+
+.exito{
+    background:#d4edda;
+    color:#155724;
+}
+/* Estilo para el mensaje de éxito (Eliminado/Actualizado) */
+/* Notificación flotante */
+.ok {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Animación de entrada */
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Clase para desvanecerse */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+/* Estilos para el formulario de edición */
+.form-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.grid-edit {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* 4 columnas alineadas */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #6f4e37;
+}
+
+.acciones-form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.btn-guardar {
+    background-color: #6f4e37;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-cancelar {
+    text-decoration: none;
+    color: #888;
+    font-weight: 500;
+}
+
+.btn-guardar:hover { background-color: #5d4037; }
+.footer-actions {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-salir {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-salir:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 75, 43, 0.4);
+    filter: brightness(1.1);
+}
+
+.btn-salir::before {
+    content: "🚪"; /* Icono opcional */
+}
+.footer-actions {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.btn-salir {
+    position: relative;
+    background: #2b2b2b;
+    color: #ff4b2b;
+    border: 2px solid #ff4b2b;
+    padding: 12px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.4s;
+    box-shadow: 0 0 10px rgba(255, 75, 43, 0.2);
+}
+
+.btn-salir:hover {
+    background: #ff4b2b;
+    color: #fff;
+    box-shadow: 0 0 30px rgba(255, 75, 43, 0.6);
+    transform: scale(1.05);
+}
+
+.btn-salir:active {
+    transform: scale(0.95);
+}
+/* Contenedor principal para alinear los botones a la derecha */
+.contenedor-botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+    padding-right: 10px;
+}
+
+/* Estilo base para los botones tipo link */
+.btn-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    color: #5d4037; /* Color café para el texto */
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* El botón de Recetas con fondo café */
+.btn-cafe {
+    background-color: #5d4037;
+    color: #ffffff !important; /* Forzamos texto blanco */
+}
+
+.btn-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    opacity: 0.9;
+}
+
+/* Ajuste de iconos */
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+@media print {
+    .no-print { display: none; }
+}
+
+/* Contenedor principal: los separa y los alinea a la derecha */
+.seccion-acciones {
+    display: flex;
+    justify-content: flex-end; /* Alinea a la derecha como en tu captura */
+    gap: 25px;                /* ESTA ES LA SEPARACIÓN que buscamos */
+    margin: 20px 0;
+    padding-right: 10px;
+}
+
+/* Estilo común para ambos botones */
+.btn-secundario, .btn-cafe {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;    /* Quitamos el subrayado morado */
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+/* Botón de Reporte (Texto café, fondo transparente/claro) */
+.btn-secundario {
+    color: #5d4037;
+    border: 1px solid #d7ccc8;
+    background-color: #fdfaf5;
+}
+
+/* Botón de Recetas (Fondo café, texto blanco) */
+.btn-cafe {
+    background-color: #5d4037;
+    color: #ffffff !important; /* Forzamos blanco para que no se vea morado */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Efecto al pasar el mouse */
+.btn-secundario:hover, .btn-cafe:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.2);
+    opacity: 0.9;
+}
+
+.icon { font-size: 1.1rem; }
+.btn-analisis {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #2e7d32; /* Verde para identificar dinero/costos */
+    color: white !important;
+    transition: 0.3s;
+}
+.btn-analisis:hover {
+    background-color: #1b5e20;
+    transform: translateY(-2px);
+}
+.btn-pos-azul {
+    background-color: #1a237e; /* Azul oscuro elegante */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-pos-azul:hover {
+    background-color: #3f51b5; /* Azul más vibrante al pasar el mouse */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-pos-azul .icon {
+    font-size: 1.2rem;
+}
+.btn-pos-azul {
+    background-color: #1a237e; /* Azul POS */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.btn-pos-azul:hover {
+    background-color: #3f51b5;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}

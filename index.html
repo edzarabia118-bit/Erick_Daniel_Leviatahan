@@ -2,131 +2,223 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Daniel Zarabia | Portafolio Vivo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="adeencaw.css">
-    <link rel="stylesheet" href="tienda.css">
+    <title>Cargando | Adeenca</title>
+    <style>
+        :root {
+            --bg: #f3f9fe;
+            --ink: #1f2937;
+            --accent: #0ea5e9;
+            --coffee: #5b3924;
+            --steel: #cfd8e3;
+            --shadow: rgba(0, 0, 0, 0.12);
+        }
 
-    <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script>
-        (function(){
-            emailjs.init("UPz0RG743lWbGT_cT");
-        })();
-    </script>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: radial-gradient(circle at 30% 20%, #ffffff 0%, var(--bg) 65%);
+            color: var(--ink);
+            font-family: "Poppins", "Segoe UI", sans-serif;
+        }
+
+        .loader-wrap {
+            width: min(92vw, 520px);
+            text-align: center;
+            padding: 22px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+
+        .scene {
+            position: relative;
+            margin: 12px auto 18px;
+            width: 320px;
+            height: 180px;
+        }
+
+        .machine {
+            position: absolute;
+            left: 10px;
+            bottom: 24px;
+            width: 180px;
+            height: 120px;
+            background: linear-gradient(145deg, #e6edf6, var(--steel));
+            border-radius: 16px;
+            box-shadow: 0 10px 20px var(--shadow);
+        }
+
+        .machine::before {
+            content: "";
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            width: 62px;
+            height: 20px;
+            border-radius: 8px;
+            background: #93a4b8;
+        }
+
+        .machine::after {
+            content: "";
+            position: absolute;
+            right: 18px;
+            top: 18px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #eff5fb;
+            border: 6px solid #94a6bb;
+        }
+
+        .spout {
+            position: absolute;
+            left: 132px;
+            top: 56px;
+            width: 54px;
+            height: 10px;
+            background: #8ca0b6;
+            border-radius: 6px;
+        }
+
+        .stream {
+            position: absolute;
+            left: 175px;
+            top: 67px;
+            width: 8px;
+            height: 56px;
+            border-radius: 99px;
+            background: linear-gradient(to bottom, #7f5737, #5b3924);
+            transform-origin: top;
+            animation: pour 1.3s ease-in-out infinite;
+        }
+
+        .cup {
+            position: absolute;
+            right: 24px;
+            bottom: 24px;
+            width: 88px;
+            height: 60px;
+            border-radius: 0 0 14px 14px;
+            background: #ffffff;
+            border: 4px solid #d4dce7;
+            overflow: hidden;
+        }
+
+        .cup::before {
+            content: "";
+            position: absolute;
+            right: -16px;
+            top: 15px;
+            width: 18px;
+            height: 22px;
+            border: 4px solid #d4dce7;
+            border-left: 0;
+            border-radius: 0 12px 12px 0;
+            background: transparent;
+        }
+
+        .coffee-fill {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0%;
+            background: linear-gradient(to top, #5b3924, #7a5233);
+            animation: fill 4.8s linear forwards;
+        }
+
+        .steam {
+            position: absolute;
+            left: 228px;
+            bottom: 86px;
+            width: 2px;
+            height: 30px;
+            background: rgba(120, 120, 120, 0.35);
+            border-radius: 99px;
+            animation: steam 1.8s ease-in-out infinite;
+        }
+
+        .steam.s2 { left: 244px; animation-delay: .35s; }
+        .steam.s3 { left: 260px; animation-delay: .7s; }
+
+        .progress {
+            width: 100%;
+            height: 14px;
+            border-radius: 99px;
+            background: #dbe7f3;
+            overflow: hidden;
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #0284c7, var(--accent));
+            animation: load 4.8s linear forwards;
+        }
+
+        .status {
+            margin-top: 10px;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        @keyframes pour {
+            0%, 100% { transform: scaleY(.3); opacity: .3; }
+            40%, 70% { transform: scaleY(1); opacity: 1; }
+        }
+
+        @keyframes fill {
+            from { height: 0%; }
+            to { height: 78%; }
+        }
+
+        @keyframes load {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+        @keyframes steam {
+            0% { transform: translateY(0); opacity: 0; }
+            35% { opacity: .55; }
+            100% { transform: translateY(-24px); opacity: 0; }
+        }
+    </style>
 </head>
 <body>
-
-<div class="fondo-animado"></div>
-
-<header class="hero">
-    <img src="img/yo.jpg" alt="Foto de Daniel">
-    <h1>Daniel Zarabia</h1>
-    <p>Programación • Redes • Tecnología</p>
-</header>
-
-<nav>
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#habilidades">Habilidades</a>
-    <a href="#contacto">Contacto</a>
-    <a href="tienda.html">Tienda</a>
-</nav>
-
-<section class="galeria">
-    <div class="card">
-        <img src="img/proyecto3.jpg">
-        <div class="info">
-            <h2>Programación</h2>
-            <p>C++, Visual Basic, lógica y POO</p>
+    <div class="loader-wrap">
+        <h1>Preparando tu café...</h1>
+        <div class="scene" aria-hidden="true">
+            <div class="machine"></div>
+            <div class="spout"></div>
+            <div class="stream"></div>
+            <div class="cup">
+                <div class="coffee-fill"></div>
+            </div>
+            <div class="steam"></div>
+            <div class="steam s2"></div>
+            <div class="steam s3"></div>
         </div>
-    </div>
 
-    <div class="card">
-        <img src="img/proyecto2.jpg">
-        <div class="info">
-            <h2>Bases de Datos</h2>
-            <p>XAMPP, MySQL, consola</p>
+        <div class="progress">
+            <div class="progress-bar"></div>
         </div>
+        <p class="status">Cargando sistema...</p>
     </div>
 
-    <div class="card">
-        <img src="img/proyecto1.jpg">
-        <div class="info">
-            <h2>Redes</h2>
-            <p>Configuración Cisco y conceptos</p>
-        </div>
-    </div>
-</section>
-
-<section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <p>
-       Profesional en formación en el área de Tecnologías de la Información,
-        con conocimientos en programación estructurada y orientada a objetos
-         (C++, Visual Basic), bases de datos (MySQL, XAMPP) y fundamentos de
-          redes (configuración y conceptos Cisco).
-
-        Experiencia desarrollando proyectos académicos y personales enfocados
-         en soluciones funcionales, integración de bases de datos y diseño de
-          interfaces web.
-
-        Destaco por mi capacidad de análisis lógico, aprendizaje autónomo y 
-        enfoque orientado a resultados. Busco integrarme a un entorno 
-        profesional donde pueda aportar conocimientos técnicos y continuar 
-        fortaleciendo mis competencias en el área de sistemas.
-    </p>
-</section>
-
-<section id="habilidades">
-    <h2>Habilidades</h2>
-    <ul>
-        <li>C++ (Eclipse, NetBeans, Visual Stude Code)</li>
-        <li>Visual Basic</li>
-        <li>Bases de datos con MySQL</li>
-        <li>Excel (nivel alto)</li>
-        <li>App Inventor</li>
-        <li>Redes (Cisco)</li>
-    </ul>
-</section>
-
-<section id="contacto">
-<h2>Contáctame</h2> 
-<p>Buscame en redes sociales:</p> 
-<div class="contacto-links"> 
-    <a href="https://facebook.com/erick_daniel_zarabia" target="_blank">📘 Facebook</a>
-     <a href="https://instagram.com/lykaiosmoses000.y" target="_blank">📸 Instagram</a>
-      <a href="https://twitter.com/leviatan_daniel" target="_blank">🐦 Twitter / X</a>
-       <a href="https://youtube.com/@leviatandanielzarabia6052 " target="_blank">▶️ YouTube</a>
-        <a href="https://www.threads.net/@lykaiosmoses000.y" target="_blank">🧵 Threads</a>
-         <p>Email: <strong>ed.zarabia118@gmail.com</strong></p>
-          <p>Ubicación: Coacalco, Estado de México</p> </div>
-<div class="telefono"> 📞 Teléfono / WhatsApp: <strong>+52 55 6324 5722</strong> </div> </div>
-</section>
-<footer>
-    <p>© 2026 Daniel Zarabia — Portafolio Experimental</p>
-</footer>
-
-<!-- BOTÓN FLOTANTE -->
-<button id="btnContacto">Contáctame</button>
-
-<!-- MODAL -->
-<div id="modalContacto">
-    <div class="modalContenido">
-        <span id="cerrarModal">&times;</span>
-        <h2>Contáctame</h2>
-        <p>¿Te interesa trabajar conmigo? Escríbeme.</p>
-
-        <form id="formContacto">
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-            <input type="email" name="correo" placeholder="Tu correo" required>
-            <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
-</div>
-
-<script src="script.js"></script>
-
+    <script>
+        setTimeout(() => {
+            window.location.href = 'login.php';
+        }, 5000);
+    </script>
 </body>
 </html>
